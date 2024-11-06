@@ -1,1 +1,52 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"gomate-d9ae0","appId":"1:229542730082:android:631d56e3299d98f6dcf43b","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"gomate-d9ae0","appId":"1:229542730082:ios:50d676f0a03b17b5dcf43b","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"gomate-d9ae0","appId":"1:229542730082:ios:50d676f0a03b17b5dcf43b","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"gomate-d9ae0","configurations":{"android":"1:229542730082:android:631d56e3299d98f6dcf43b","ios":"1:229542730082:ios:50d676f0a03b17b5dcf43b","macos":"1:229542730082:ios:50d676f0a03b17b5dcf43b","web":"1:229542730082:web:38fe0e788217ec2fdcf43b","windows":"1:229542730082:web:b4a6639f8f75492ddcf43b"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "skydreamer-skywalker",
+          "appId": "1:453820398714:android:36cf1b781497b4aca1cfc3",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "skydreamer-skywalker",
+          "appId": "1:453820398714:ios:021cabc9e38ba807a1cfc3",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "skydreamer-skywalker",
+          "appId": "1:453820398714:ios:dc5ee797a5792cf9a1cfc3",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "skydreamer-skywalker",
+          "configurations": {
+            "android": "1:453820398714:android:36cf1b781497b4aca1cfc3",
+            "ios": "1:453820398714:ios:021cabc9e38ba807a1cfc3",
+            "macos": "1:453820398714:ios:dc5ee797a5792cf9a1cfc3",
+            "web": "1:453820398714:web:595656e6c9fe4d3fa1cfc3",
+            "windows": "1:453820398714:web:5f6dbd5759eb1ecda1cfc3"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "us-central1"
+    }
+  }
+}

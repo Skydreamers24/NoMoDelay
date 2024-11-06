@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "229542730082",
-    "project_id": "gomate-d9ae0",
-    "storage_bucket": "gomate-d9ae0.appspot.com"
+    "project_number": "453820398714",
+    "project_id": "skydreamer-skywalker",
+    "storage_bucket": "skydreamer-skywalker.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:229542730082:android:631d56e3299d98f6dcf43b",
+        "mobilesdk_app_id": "1:453820398714:android:36cf1b781497b4aca1cfc3",
         "android_client_info": {
           "package_name": "com.skydreamers.GoMate"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCylw4U60qZWE7GNkMcRG6MlZZk4EY8keY"
+          "current_key": "AIzaSyD5DrITlT8zKdZ2BgUh1pGdPsgAzcMBsFo"
         }
       ],
       "services": {

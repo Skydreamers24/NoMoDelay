@@ -41,48 +41,46 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBblqaxZolVEOTFs2OMUKR08YZDfSTO3D8',
-    appId: '1:229542730082:web:38fe0e788217ec2fdcf43b',
-    messagingSenderId: '229542730082',
-    projectId: 'skywalker-d9ae0',
-    authDomain: 'skywalker-d9ae0.firebaseapp.com',
-    storageBucket: 'skywalker-d9ae0.appspot.com',
-    measurementId: 'G-WZBN5R4XPS',
+    apiKey: 'AIzaSyCZEyspaFb4swXkxvoM1MRJPv-7TRX8A0o',
+    appId: '1:453820398714:web:595656e6c9fe4d3fa1cfc3',
+    messagingSenderId: '453820398714',
+    projectId: 'skydreamer-skywalker',
+    authDomain: 'skydreamer-skywalker.firebaseapp.com',
+    storageBucket: 'skydreamer-skywalker.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCylw4U60qZWE7GNkMcRG6MlZZk4EY8keY',
-    appId: '1:229542730082:android:631d56e3299d98f6dcf43b',
-    messagingSenderId: '229542730082',
-    projectId: 'skywalker-d9ae0',
-    storageBucket: 'skywalker-d9ae0.appspot.com',
+    apiKey: 'AIzaSyD5DrITlT8zKdZ2BgUh1pGdPsgAzcMBsFo',
+    appId: '1:453820398714:android:36cf1b781497b4aca1cfc3',
+    messagingSenderId: '453820398714',
+    projectId: 'skydreamer-skywalker',
+    storageBucket: 'skydreamer-skywalker.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDIwfk_SohXkQfSizOUDBDyD3CJT8fhMcQ',
-    appId: '1:229542730082:ios:50d676f0a03b17b5dcf43b',
-    messagingSenderId: '229542730082',
-    projectId: 'skywalker-d9ae0',
-    storageBucket: 'skywalker-d9ae0.appspot.com',
-    iosBundleId: 'com.example.skywalker',
+    apiKey: 'AIzaSyApBbN5M8u77tvgRkKKrEP5-SziQb0CEOM',
+    appId: '1:453820398714:ios:021cabc9e38ba807a1cfc3',
+    messagingSenderId: '453820398714',
+    projectId: 'skydreamer-skywalker',
+    storageBucket: 'skydreamer-skywalker.firebasestorage.app',
+    iosBundleId: 'com.skydreamers.GoMate',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDIwfk_SohXkQfSizOUDBDyD3CJT8fhMcQ',
-    appId: '1:229542730082:ios:50d676f0a03b17b5dcf43b',
-    messagingSenderId: '229542730082',
-    projectId: 'skywalker-d9ae0',
-    storageBucket: 'skywalker-d9ae0.appspot.com',
-    iosBundleId: 'com.example.skywalker',
+    apiKey: 'AIzaSyApBbN5M8u77tvgRkKKrEP5-SziQb0CEOM',
+    appId: '1:453820398714:ios:dc5ee797a5792cf9a1cfc3',
+    messagingSenderId: '453820398714',
+    projectId: 'skydreamer-skywalker',
+    storageBucket: 'skydreamer-skywalker.firebasestorage.app',
+    iosBundleId: 'com.example.gomate',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBblqaxZolVEOTFs2OMUKR08YZDfSTO3D8',
-    appId: '1:229542730082:web:b4a6639f8f75492ddcf43b',
-    messagingSenderId: '229542730082',
-    projectId: 'skywalker-d9ae0',
-    authDomain: 'skywalker-d9ae0.firebaseapp.com',
-    storageBucket: 'skywalker-d9ae0.appspot.com',
-    measurementId: 'G-1J1R83H0JB',
+    apiKey: 'AIzaSyCZEyspaFb4swXkxvoM1MRJPv-7TRX8A0o',
+    appId: '1:453820398714:web:5f6dbd5759eb1ecda1cfc3',
+    messagingSenderId: '453820398714',
+    projectId: 'skydreamer-skywalker',
+    authDomain: 'skydreamer-skywalker.firebaseapp.com',
+    storageBucket: 'skydreamer-skywalker.firebasestorage.app',
   );
 }

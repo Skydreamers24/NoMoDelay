@@ -50,7 +50,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
     accountStaging["email"] = account.email;
     accountStaging["phoneNo"] = account.phoneNo;
     accountStaging["gender"] = account.gender;
-    accountStaging["profileImage"] = account.profileImage;
   }
 
   void setProfileImage(String profileImage) {
@@ -135,7 +134,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           email: accountStaging["email"],
                           phoneNo: accountStaging["phoneNo"],
                           gender: accountStaging["gender"],
-                          profileImage: accountStaging["profileImage"],
                           age: accountStaging["age"],
                           dateOfBirth: accountStaging["dateOfBirth"]));
                       setDidSubmit(true);
@@ -155,14 +153,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
         ),
         body: Adaptive(
           horizontal: EditProfilePageHorizontal(
-            profileImage: accountStaging["profileImage"],
-            setProfileImage: setProfileImage,
             updateAccountPage: widget.onSave,
             widgets: widgets,
           ),
           vertical: EditProfilePageVertical(
-            profileImage: accountStaging["profileImage"],
-            setProfileImage: setProfileImage,
             updateAccountPage: widget.onSave,
             widgets: widgets,
           ),
@@ -174,15 +168,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
 
 class EditProfilePageVertical extends StatefulWidget {
   final void Function() updateAccountPage;
-  final String profileImage;
-  final void Function(String) setProfileImage;
   final List<Widget> Function(BuildContext) widgets;
   const EditProfilePageVertical(
-      {super.key,
-      required this.profileImage,
-      required this.updateAccountPage,
-      required this.widgets,
-      required this.setProfileImage});
+      {super.key, required this.updateAccountPage, required this.widgets});
 
   @override
   State<EditProfilePageVertical> createState() =>
@@ -200,21 +188,6 @@ class _EditProfilePageVerticalState extends State<EditProfilePageVertical> {
           children: [
             const SizedBox(
               height: 8,
-            ),
-            Padding(
-              padding: comfortable,
-              child: ProfileImageEditBox(
-                  profileImage: widget.profileImage,
-                  unsetProfileImage: () {
-                    setState(() {
-                      widget.setProfileImage("");
-                    });
-                  },
-                  onProfileImageChanged: (updatedProfileImage) {
-                    setState(() {
-                      widget.setProfileImage(updatedProfileImage);
-                    });
-                  }),
             ),
             Column(
               children: [
@@ -234,15 +207,9 @@ class _EditProfilePageVerticalState extends State<EditProfilePageVertical> {
 
 class EditProfilePageHorizontal extends StatefulWidget {
   final void Function() updateAccountPage;
-  final String profileImage;
-  final void Function(String) setProfileImage;
   final List<Widget> Function(BuildContext) widgets;
   const EditProfilePageHorizontal(
-      {super.key,
-      required this.updateAccountPage,
-      required this.profileImage,
-      required this.setProfileImage,
-      required this.widgets});
+      {super.key, required this.updateAccountPage, required this.widgets});
 
   @override
   State<EditProfilePageHorizontal> createState() =>
@@ -261,45 +228,11 @@ class _EditProfilePageHorizontalState extends State<EditProfilePageHorizontal> {
             const SizedBox(
               height: 8,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Padding(
-                          padding: comfortable,
-                          child: ProfileImageEditBox(
-                              profileImage: widget.profileImage,
-                              unsetProfileImage: () {
-                                setState(() {
-                                  widget.setProfileImage("");
-                                });
-                              },
-                              onProfileImageChanged: (updatedProfileImage) {
-                                setState(() {
-                                  widget.setProfileImage(updatedProfileImage);
-                                });
-                              }))
-                    ],
-                  ),
-                ),
-                Flexible(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      for (var widget in widget.widgets(context))
-                        Padding(
-                          padding: comfortableListChildren,
-                          child: widget,
-                        )
-                    ],
-                  ),
-                )
-              ],
-            ),
+            for (var widget in widget.widgets(context))
+              Padding(
+                padding: comfortableListChildren,
+                child: widget,
+              )
           ],
         ),
       ),

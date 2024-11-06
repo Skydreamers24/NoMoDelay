@@ -14,7 +14,7 @@
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.skydreamers.GoMate</string>
+		<string>$(AppIdentifierPrefix)com.skydreamers.Skywalker</string>
 		<string>$(AppIdentifierPrefix)com.google.GIDSignIn</string>
 	</array>
 </dict>

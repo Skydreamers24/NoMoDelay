@@ -83,69 +83,65 @@ class _UserCardBackState extends State<UserCardBack> {
               ),
               Flexible(
                 flex: 20,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: ProfileImage(
-                        heroTag: "profileImage",
-                        profileImage: account.profileImage,
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: comfortableVertical.copyWith(right: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              account.name.toLocalizedString(context),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.start,
-                              style: heading(context),
-                            ),
-                            account.gender != Gender.ratherNotSay ||
-                                    account.age > 0
-                                ? Text(
-                                    "${account.gender != Gender.ratherNotSay ? account.gender : ""}${account.gender != Gender.ratherNotSay && account.age > 0 ? ", " : ""}${account.age > 0 ? "${account.age}" : ""}",
-                                    textAlign: TextAlign.start,
-                                    style: subheading(context),
-                                  )
-                                : nothing,
-                            account.email.isNotEmpty
-                                ? Text(
-                                    account.email,
-                                    textAlign: TextAlign.start,
-                                    overflow: TextOverflow.ellipsis,
-                                  )
-                                : nothing,
-                            account.phoneNo.isNotEmpty
-                                ? Text(
-                                    account.phoneNo,
-                                    textAlign: TextAlign.start,
-                                    overflow: TextOverflow.ellipsis,
-                                  )
-                                : nothing,
-                            const Spacer(),
-                            Column(
-                              children: [
-                                FilledButton.tonalIcon(
-                                  onPressed: showNewPage(
-                                      context,
-                                      EditProfilePage(
-                                          account: account, onSave: update)),
-                                  label: const Text("Edit"),
-                                  icon: const Icon(Icons.edit),
-                                ),
-                              ],
-                            )
-                          ],
+                child: Padding(
+                  padding: spaciousCardInset,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: comfortableVertical.copyWith(right: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                account.name.toLocalizedString(context),
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.start,
+                                style: heading(context),
+                              ),
+                              account.gender != Gender.ratherNotSay ||
+                                      account.age > 0
+                                  ? Text(
+                                      "${account.gender != Gender.ratherNotSay ? account.gender : ""}${account.gender != Gender.ratherNotSay && account.age > 0 ? ", " : ""}${account.age > 0 ? "${account.age}" : ""}",
+                                      textAlign: TextAlign.start,
+                                      style: subheading(context),
+                                    )
+                                  : nothing,
+                              account.email.isNotEmpty
+                                  ? Text(
+                                      account.email,
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.ellipsis,
+                                    )
+                                  : nothing,
+                              account.phoneNo.isNotEmpty
+                                  ? Text(
+                                      account.phoneNo,
+                                      textAlign: TextAlign.start,
+                                      overflow: TextOverflow.ellipsis,
+                                    )
+                                  : nothing,
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  FilledButton.tonalIcon(
+                                    onPressed: showNewPage(
+                                        context,
+                                        EditProfilePage(
+                                            account: account, onSave: update)),
+                                    label: const Text("Edit"),
+                                    icon: const Icon(Icons.edit),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

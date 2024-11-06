@@ -51,7 +51,6 @@ class Account extends StatelessWidget {
             email: (data["email"] ?? "") as String,
             gender: Gender.fromString((data["gender"] ?? "Male") as String),
             phoneNo: (data["phoneNo"] ?? "") as String,
-            profileImage: (data["profileImage"] ?? "") as String,
             child: child,
           );
 
@@ -62,7 +61,6 @@ class Account extends StatelessWidget {
 
 class AccountData extends InheritedWidget {
   final String uid;
-  final String profileImage;
   final Name name;
   final Gender gender;
   final DateTime? dateOfBirth;
@@ -81,7 +79,6 @@ class AccountData extends InheritedWidget {
       this.dateOfBirth,
       this.email = "",
       this.phoneNo = "",
-      this.profileImage = "",
       super.child = const Placeholder()});
 
   AccountData copyWithEmpty() {
@@ -91,7 +88,6 @@ class AccountData extends InheritedWidget {
       gender: Gender.male,
       email: "",
       phoneNo: "",
-      profileImage: "",
       uid: uid,
     );
   }
@@ -104,7 +100,6 @@ class AccountData extends InheritedWidget {
       DateTime? dateOfBirth,
       String? email,
       String? phoneNo,
-      String? profileImage,
       Widget? child,
       (DateTime, String)? currentReport,
       List<(DateTime, String, String)>? reportHistoryArray,
@@ -116,7 +111,6 @@ class AccountData extends InheritedWidget {
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       email: email ?? this.email,
       phoneNo: phoneNo ?? this.phoneNo,
-      profileImage: profileImage ?? this.profileImage,
       child: child ?? this.child,
     );
   }
@@ -131,14 +125,12 @@ class AccountData extends InheritedWidget {
       "dateOfBirth": dateOfBirthConverted,
       "email": email,
       "phoneNo": phoneNo,
-      "profileImage": profileImage,
     };
   }
 
   @override
   bool updateShouldNotify(AccountData oldWidget) {
-    return profileImage != oldWidget.profileImage ||
-        name != oldWidget.name ||
+    return name != oldWidget.name ||
         gender != oldWidget.gender ||
         dateOfBirth != oldWidget.dateOfBirth ||
         email != oldWidget.email ||

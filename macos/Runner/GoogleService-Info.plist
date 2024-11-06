@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDIwfk_SohXkQfSizOUDBDyD3CJT8fhMcQ</string>
+	<string>AIzaSyApBbN5M8u77tvgRkKKrEP5-SziQb0CEOM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>229542730082</string>
+	<string>453820398714</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.gomate</string>
 	<key>PROJECT_ID</key>
-	<string>gomate-d9ae0</string>
+	<string>skydreamer-skywalker</string>
 	<key>STORAGE_BUCKET</key>
-	<string>gomate-d9ae0.appspot.com</string>
+	<string>skydreamer-skywalker.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:229542730082:ios:50d676f0a03b17b5dcf43b</string>
+	<string>1:453820398714:ios:dc5ee797a5792cf9a1cfc3</string>
 </dict>
 </plist>
