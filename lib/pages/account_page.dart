@@ -1,10 +1,10 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:gomate/backend/account.dart';
-import 'package:gomate/pages/page_content.dart';
-import 'package:gomate/widgets/cards/contact_card.dart';
-import 'package:gomate/widgets/cards/user_card.dart';
-import 'package:gomate/widgets/other/sign_out_button.dart';
+import 'package:skywalker/backend/account.dart';
+import 'package:skywalker/pages/page_content.dart';
+import 'package:skywalker/widgets/cards/contact_card.dart';
+import 'package:skywalker/widgets/cards/user_card.dart';
+import 'package:skywalker/widgets/other/sign_out_button.dart';
 
 class AccountPage extends StatefulWidget {
   static const userCardFront = UserCardFront();

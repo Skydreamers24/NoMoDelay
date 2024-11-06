@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/widgets/other/adaptive.dart';
+import 'package:skywalker/widgets/other/adaptive.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 void Function() showPopup(BuildContext context, {required Widget Function(BuildContext) sheet}) {

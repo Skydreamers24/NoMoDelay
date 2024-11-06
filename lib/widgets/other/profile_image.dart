@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:gomate/widgets/other/image_frame.dart';
+import 'package:skywalker/widgets/other/image_frame.dart';
 import 'package:uuid/uuid.dart';
 
 class ProfileImage extends StatelessWidget {

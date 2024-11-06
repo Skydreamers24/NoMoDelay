@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:animator/animator.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/other/adaptive.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/other/adaptive.dart';
 
 class CustomLineChart extends StatefulWidget {
   const CustomLineChart(

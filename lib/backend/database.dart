@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:gomate/backend/account.dart';
+import 'package:skywalker/backend/account.dart';
 
 void toDatabaseSync(AccountData account) async {
   print("Sync up");

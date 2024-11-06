@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/dimensions.dart';
+import 'package:skywalker/misc/dimensions.dart';
 
 class Adaptive extends StatefulWidget {
   final Widget? horizontal;

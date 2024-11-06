@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/cards/content_card.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/cards/content_card.dart';
 
 class ContactCardWide extends StatelessWidget {
   const ContactCardWide({super.key});

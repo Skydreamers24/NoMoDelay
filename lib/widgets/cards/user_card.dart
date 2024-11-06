@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gomate/backend/account.dart';
-import 'package:gomate/misc/gender.dart';
-import 'package:gomate/misc/show_popup.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/pages/edit_profile_page.dart';
-import 'package:gomate/widgets/other/image_frame.dart';
-import 'package:gomate/widgets/other/profile_image.dart';
+import 'package:skywalker/backend/account.dart';
+import 'package:skywalker/misc/gender.dart';
+import 'package:skywalker/misc/show_popup.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/pages/edit_profile_page.dart';
+import 'package:skywalker/widgets/other/image_frame.dart';
+import 'package:skywalker/widgets/other/profile_image.dart';
 
 class UserCardFront extends StatelessWidget {
   const UserCardFront({super.key});

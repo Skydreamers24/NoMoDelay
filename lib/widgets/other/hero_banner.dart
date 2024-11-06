@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:gomate/misc/values.dart';
+import 'package:skywalker/misc/values.dart';
 
 class HeroBanner extends StatelessWidget {
   final String? image;

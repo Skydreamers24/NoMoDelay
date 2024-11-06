@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/other/page_title.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/other/page_title.dart';
 
 class PageContent extends StatelessWidget {
   final String? title;

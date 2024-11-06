@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:i18n_extension/i18n_extension.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'package:gomate/backend/database.dart';
-import 'package:gomate/backend/account.dart';
-import 'package:gomate/misc/name.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/other/adaptive.dart';
-import 'package:gomate/widgets/other/profile_image.dart';
-import 'package:gomate/widgets/other/form_fields.dart';
+import 'package:skywalker/backend/database.dart';
+import 'package:skywalker/backend/account.dart';
+import 'package:skywalker/misc/name.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/other/adaptive.dart';
+import 'package:skywalker/widgets/other/profile_image.dart';
+import 'package:skywalker/widgets/other/form_fields.dart';
 
 class EditProfilePage extends StatefulWidget {
   final void Function() onSave;

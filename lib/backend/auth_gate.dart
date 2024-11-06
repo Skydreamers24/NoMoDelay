@@ -4,9 +4,9 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart'
     hide EmailVerifiedAction;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gomate/backend/account.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/pages/edit_profile_page.dart';
+import 'package:skywalker/backend/account.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/pages/edit_profile_page.dart';
 
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key, required this.child});

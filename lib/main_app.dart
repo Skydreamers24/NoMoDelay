@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/theme.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/pages/account_page.dart';
-import 'package:gomate/pages/home_page.dart';
-import 'package:gomate/widgets/other/adaptive.dart';
+import 'package:skywalker/misc/theme.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/pages/account_page.dart';
+import 'package:skywalker/pages/home_page.dart';
+import 'package:skywalker/widgets/other/adaptive.dart';
 
 enum AppPage {
   home, account;

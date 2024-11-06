@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/values.dart';
+import 'package:skywalker/misc/values.dart';
 
 enum Dimensions {
   // Do not use variants directly

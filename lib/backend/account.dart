@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:gomate/backend/auth_gate.dart';
-import 'package:gomate/misc/gender.dart';
-import 'package:gomate/misc/name.dart';
+import 'package:skywalker/backend/auth_gate.dart';
+import 'package:skywalker/misc/gender.dart';
+import 'package:skywalker/misc/name.dart';
 
 class Account extends StatelessWidget {
   const Account({

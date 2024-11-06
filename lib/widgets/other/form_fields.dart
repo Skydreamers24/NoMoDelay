@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/gender.dart';
+import 'package:skywalker/misc/gender.dart';
 import 'package:date_field/date_field.dart';
 
 typedef AccountStaging = Map<String, dynamic>;

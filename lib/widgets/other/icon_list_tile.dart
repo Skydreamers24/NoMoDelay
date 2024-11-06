@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/widgets/other/image_frame.dart';
+import 'package:skywalker/widgets/other/image_frame.dart';
 
 class IconListTile extends StatelessWidget {
   const IconListTile(

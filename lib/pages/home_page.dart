@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/show_popup.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/pages/page_content.dart';
-import 'package:gomate/widgets/cards/content_card.dart';
-import 'package:gomate/widgets/other/chart.dart';
-import 'package:gomate/widgets/other/hero_banner.dart';
-import 'package:gomate/widgets/other/image_frame.dart';
+import 'package:skywalker/misc/show_popup.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/pages/page_content.dart';
+import 'package:skywalker/widgets/cards/content_card.dart';
+import 'package:skywalker/widgets/other/chart.dart';
+import 'package:skywalker/widgets/other/hero_banner.dart';
+import 'package:skywalker/widgets/other/image_frame.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 showAboutDialog(
                     context: context,
-                    applicationName: "GoMate",
+                    applicationName: "skywalker",
                     applicationVersion: "1.0",
                     useRootNavigator: false,
                     applicationIcon: SizedBox(

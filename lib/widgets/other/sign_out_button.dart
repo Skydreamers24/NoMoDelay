@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/values.dart';
+import 'package:skywalker/misc/values.dart';
 
 class CustomSignOutButton extends StatelessWidget {
   const CustomSignOutButton({

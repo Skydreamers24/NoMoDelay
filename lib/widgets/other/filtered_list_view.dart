@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:gomate/misc/sort_option.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/other/adaptive.dart';
-import 'package:gomate/widgets/other/custom_divider.dart';
+import 'package:skywalker/misc/sort_option.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/other/adaptive.dart';
+import 'package:skywalker/widgets/other/custom_divider.dart';
 
 class ListFilter<T> {
   final String name;

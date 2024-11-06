@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gomate/misc/values.dart';
-import 'package:gomate/widgets/other/tappable.dart';
+import 'package:skywalker/misc/values.dart';
+import 'package:skywalker/widgets/other/tappable.dart';
 
 class ContentCard extends StatelessWidget {
   final Widget? child;
