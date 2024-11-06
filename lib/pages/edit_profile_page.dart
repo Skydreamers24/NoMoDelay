@@ -50,6 +50,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     accountStaging["email"] = account.email;
     accountStaging["phoneNo"] = account.phoneNo;
     accountStaging["gender"] = account.gender;
+    accountStaging["region"] = account.region;
   }
 
   void setProfileImage(String profileImage) {
@@ -99,7 +100,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ? ""
                 : null,
         accountStaging: accountStaging,
-      )
+      ),
+      TextFormFieldRow(
+          labelText: "Country/Region",
+          accountStaging: accountStaging,
+          valueToChange: "region")
     ];
   }
 
@@ -135,7 +140,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           phoneNo: accountStaging["phoneNo"],
                           gender: accountStaging["gender"],
                           age: accountStaging["age"],
-                          dateOfBirth: accountStaging["dateOfBirth"]));
+                          dateOfBirth: accountStaging["dateOfBirth"],
+                          region: accountStaging["region"]));
                       setDidSubmit(true);
                       widget.onSave();
                       if (widget.hasBackButton) {

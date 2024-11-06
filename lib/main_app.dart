@@ -3,10 +3,11 @@ import 'package:skywalker/misc/theme.dart';
 import 'package:skywalker/misc/values.dart';
 import 'package:skywalker/pages/account_page.dart';
 import 'package:skywalker/pages/home_page.dart';
+import 'package:skywalker/pages/trip_page.dart';
 import 'package:skywalker/widgets/other/adaptive.dart';
 
 enum AppPage {
-  home, account;
+  home, trip, account;
 
   @override
   String toString() {
@@ -15,6 +16,8 @@ enum AppPage {
         return "Home";
       case account:
         return "Account";
+      case trip:
+        return "Trip";
       default:
         return "";
     }
@@ -25,6 +28,8 @@ enum AppPage {
       switch (this) {
         case home:
           return isActive ? Icons.home : Icons.home_outlined;
+        case trip:
+          return isActive ? Icons.luggage : Icons.luggage_outlined;
         case account:
           return isActive ? Icons.person_rounded: Icons.person_outline_rounded;
         default:
@@ -41,6 +46,8 @@ enum AppPage {
     switch (this) {
       case home:
         return const HomePage();
+      case trip:
+        return const TripPage();
       case account:
         return const AccountPage();
       default:
@@ -68,17 +75,7 @@ class _MainAppState extends State<MainApp> {
 
   void changePage(int value) {
     setState(() {
-      switch (value) {
-        case 0:
-          page = AppPage.home;
-          break;
-        case 1:
-          page = AppPage.account;
-          break;
-        default:
-          page = AppPage.home;
-          break;
-      }
+      page = AppPage.values[value];
     });
   }
 
