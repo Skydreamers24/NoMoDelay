@@ -22,8 +22,8 @@ enum AppPage {
         return "Trip";
       case account:
         return "Account";
-      case trip:
-        return "Trip";
+      case quiz:
+        return "Quiz";
       default:
         return "";
     }
