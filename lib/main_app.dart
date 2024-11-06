@@ -5,19 +5,25 @@ import 'package:skywalker/pages/account_page.dart';
 import 'package:skywalker/pages/home_page.dart';
 import 'package:skywalker/pages/trip_page.dart';
 import 'package:skywalker/widgets/other/adaptive.dart';
+import 'package:skywalker/pages/quiz_page.dart';
 
 enum AppPage {
-  home, trip, account;
+  home,
+  trip,
+  account,
+  quiz;
 
   @override
   String toString() {
     switch (this) {
       case home:
         return "Home";
-      case account:
-        return "Account";
       case trip:
         return "Trip";
+      case account:
+        return "Account";
+      case quiz:
+        return "Quiz";
       default:
         return "";
     }
@@ -30,8 +36,12 @@ enum AppPage {
           return isActive ? Icons.home : Icons.home_outlined;
         case trip:
           return isActive ? Icons.luggage : Icons.luggage_outlined;
+        case trip:
+          return isActive ? Icons.luggage : Icons.luggage_outlined;
         case account:
-          return isActive ? Icons.person_rounded: Icons.person_outline_rounded;
+          return isActive ? Icons.person_rounded : Icons.person_outline_rounded;
+        case quiz:
+          return isActive ? Icons.quiz : Icons.quiz_outlined;
         default:
           return isActive ? Icons.home : Icons.home_outlined;
       }
@@ -48,8 +58,12 @@ enum AppPage {
         return const HomePage();
       case trip:
         return const TripPage();
+      case trip:
+        return const TripPage();
       case account:
         return const AccountPage();
+      case quiz:
+        return const QuizPage();
       default:
         return const Placeholder();
     }
@@ -75,6 +89,7 @@ class _MainAppState extends State<MainApp> {
 
   void changePage(int value) {
     setState(() {
+      page = AppPage.values[value];
       page = AppPage.values[value];
     });
   }
