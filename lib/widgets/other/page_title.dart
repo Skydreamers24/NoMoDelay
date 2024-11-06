@@ -8,8 +8,11 @@ class PageTitle extends StatelessWidget {
   final EdgeInsets? padding;
   final Color? backgroundColor;
 
-  const PageTitle(this.title, {this.padding, this.backgroundColor, super.key}) : titleWidget = null;
-  const PageTitle.withTitleWidget(this.titleWidget, {this.padding, this.backgroundColor, super.key}) : title = null;
+  const PageTitle(this.title, {this.padding, this.backgroundColor, super.key})
+      : titleWidget = null;
+  const PageTitle.withTitleWidget(this.titleWidget,
+      {this.padding, this.backgroundColor, super.key})
+      : title = null;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class PageTitle extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const PageStart(),
+          titleWidget == null ? const PageStart() : nothing,
           Padding(
             padding: padding ?? spacious,
             child: titleWidget ??

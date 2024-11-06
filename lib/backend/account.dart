@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:skywalker/backend/auth_gate.dart';
 import 'package:skywalker/misc/gender.dart';
 import 'package:skywalker/misc/name.dart';
+import 'package:skywalker/misc/trip.dart';
 
 class Account extends StatelessWidget {
   const Account({
@@ -51,6 +52,9 @@ class Account extends StatelessWidget {
             email: (data["email"] ?? "") as String,
             gender: Gender.fromString((data["gender"] ?? "Male") as String),
             phoneNo: (data["phoneNo"] ?? "") as String,
+            region: (data["region"] ?? "") as String,
+            trip: Trip.fromMap(
+                data["trip"] ?? const { "image": "", "journeys": []}),
             child: child,
           );
 
@@ -66,6 +70,8 @@ class AccountData extends InheritedWidget {
   final DateTime? dateOfBirth;
   final String email;
   final String phoneNo;
+  final String region;
+  final Trip trip;
 
   int get age =>
       (DateTime.now().difference(dateOfBirth ?? DateTime.now()).inDays / 365.25)
@@ -79,6 +85,8 @@ class AccountData extends InheritedWidget {
       this.dateOfBirth,
       this.email = "",
       this.phoneNo = "",
+      this.region = "",
+      this.trip = const Trip(),
       super.child = const Placeholder()});
 
   AccountData copyWithEmpty() {
@@ -88,22 +96,24 @@ class AccountData extends InheritedWidget {
       gender: Gender.male,
       email: "",
       phoneNo: "",
+      region: "",
+      trip: const Trip(),
       uid: uid,
     );
   }
 
-  AccountData copyWith(
-      {String? uid,
-      Name? name,
-      Gender? gender,
-      int? age,
-      DateTime? dateOfBirth,
-      String? email,
-      String? phoneNo,
-      Widget? child,
-      (DateTime, String)? currentReport,
-      List<(DateTime, String, String)>? reportHistoryArray,
-      List<String>? pendingReportCodeArray}) {
+  AccountData copyWith({
+    String? uid,
+    Name? name,
+    Gender? gender,
+    int? age,
+    DateTime? dateOfBirth,
+    String? email,
+    String? phoneNo,
+    Widget? child,
+    String? region,
+    Trip? trip,
+  }) {
     return AccountData(
       uid: uid ?? this.uid,
       name: name ?? this.name,
@@ -111,6 +121,8 @@ class AccountData extends InheritedWidget {
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       email: email ?? this.email,
       phoneNo: phoneNo ?? this.phoneNo,
+      region: region ?? this.region,
+      trip: trip ?? this.trip,
       child: child ?? this.child,
     );
   }
@@ -125,6 +137,8 @@ class AccountData extends InheritedWidget {
       "dateOfBirth": dateOfBirthConverted,
       "email": email,
       "phoneNo": phoneNo,
+      "region": region,
+      "trip": trip.toMap()
     };
   }
 
@@ -135,6 +149,8 @@ class AccountData extends InheritedWidget {
         dateOfBirth != oldWidget.dateOfBirth ||
         email != oldWidget.email ||
         phoneNo != oldWidget.phoneNo ||
-        uid != oldWidget.uid;
+        uid != oldWidget.uid ||
+        region != oldWidget.region ||
+        trip != oldWidget.trip;
   }
 }

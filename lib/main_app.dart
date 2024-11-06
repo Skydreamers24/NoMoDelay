@@ -3,11 +3,13 @@ import 'package:skywalker/misc/theme.dart';
 import 'package:skywalker/misc/values.dart';
 import 'package:skywalker/pages/account_page.dart';
 import 'package:skywalker/pages/home_page.dart';
+import 'package:skywalker/pages/trip_page.dart';
 import 'package:skywalker/widgets/other/adaptive.dart';
 import 'package:skywalker/pages/quiz_page.dart';
 
 enum AppPage {
   home,
+  trip,
   account,
   quiz;
 
@@ -18,8 +20,6 @@ enum AppPage {
         return "Home";
       case account:
         return "Account";
-      case quiz:
-        return "Quiz";
       default:
         return "";
     }
@@ -30,6 +30,8 @@ enum AppPage {
       switch (this) {
         case home:
           return isActive ? Icons.home : Icons.home_outlined;
+        case trip:
+          return isActive ? Icons.luggage : Icons.luggage_outlined;
         case account:
           return isActive ? Icons.person_rounded : Icons.person_outline_rounded;
         case quiz:
@@ -48,6 +50,8 @@ enum AppPage {
     switch (this) {
       case home:
         return const HomePage();
+      case trip:
+        return const TripPage();
       case account:
         return const AccountPage();
       case quiz:

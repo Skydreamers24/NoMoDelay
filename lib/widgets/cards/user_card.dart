@@ -66,85 +66,71 @@ class _UserCardBackState extends State<UserCardBack> {
       color: theme.colorScheme.surfaceContainerLowest,
       child: Stack(
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Flexible(
-                flex: 3,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                        constraints: const BoxConstraints(maxHeight: 30),
-                        child: SvgPicture.asset("assets/logo_text.svg")),
-                  ],
-                ),
-              ),
-              Flexible(
-                flex: 20,
-                child: Padding(
-                  padding: spaciousCardInset,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: comfortableVertical.copyWith(right: 10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                account.name.toLocalizedString(context),
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.start,
-                                style: heading(context),
-                              ),
-                              account.gender != Gender.ratherNotSay ||
-                                      account.age > 0
-                                  ? Text(
-                                      "${account.gender != Gender.ratherNotSay ? account.gender : ""}${account.gender != Gender.ratherNotSay && account.age > 0 ? ", " : ""}${account.age > 0 ? "${account.age}" : ""}",
-                                      textAlign: TextAlign.start,
-                                      style: subheading(context),
-                                    )
-                                  : nothing,
-                              account.email.isNotEmpty
-                                  ? Text(
-                                      account.email,
-                                      textAlign: TextAlign.start,
-                                      overflow: TextOverflow.ellipsis,
-                                    )
-                                  : nothing,
-                              account.phoneNo.isNotEmpty
-                                  ? Text(
-                                      account.phoneNo,
-                                      textAlign: TextAlign.start,
-                                      overflow: TextOverflow.ellipsis,
-                                    )
-                                  : nothing,
-                              const Spacer(),
-                              Column(
-                                children: [
-                                  FilledButton.tonalIcon(
-                                    onPressed: showNewPage(
-                                        context,
-                                        EditProfilePage(
-                                            account: account, onSave: update)),
-                                    label: const Text("Edit"),
-                                    icon: const Icon(Icons.edit),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+          Padding(
+            padding: spaciousCardInset.copyWith(bottom: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: comfortableVertical.copyWith(right: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          account.name.toLocalizedString(context),
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.start,
+                          style: heading(context),
                         ),
-                      )
-                    ],
+                        account.gender != Gender.ratherNotSay || account.age > 0
+                            ? Text(
+                                "${account.gender != Gender.ratherNotSay ? account.gender : ""}${account.gender != Gender.ratherNotSay && account.age > 0 ? ", " : ""}${account.age > 0 ? "${account.age}" : ""}",
+                                textAlign: TextAlign.start,
+                                style: subheading(context),
+                              )
+                            : nothing,
+                        account.email.isNotEmpty
+                            ? Text(
+                                account.email,
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.ellipsis,
+                              )
+                            : nothing,
+                        account.phoneNo.isNotEmpty
+                            ? Text(
+                                account.phoneNo,
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.ellipsis,
+                              )
+                            : nothing,
+                        account.region.isNotEmpty
+                            ? Text(
+                                account.region,
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.ellipsis,
+                              )
+                            : nothing,
+                        const Spacer(),
+                        Column(
+                          children: [
+                            FilledButton.tonalIcon(
+                              onPressed: showNewPage(
+                                  context,
+                                  EditProfilePage(
+                                      account: account, onSave: update)),
+                              label: const Text("Edit"),
+                              icon: const Icon(Icons.edit),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
           Align(
             alignment: Alignment.topRight,
