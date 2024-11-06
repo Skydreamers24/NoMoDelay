@@ -36,6 +36,8 @@ enum AppPage {
           return isActive ? Icons.home : Icons.home_outlined;
         case trip:
           return isActive ? Icons.luggage : Icons.luggage_outlined;
+        case trip:
+          return isActive ? Icons.luggage : Icons.luggage_outlined;
         case account:
           return isActive ? Icons.person_rounded : Icons.person_outline_rounded;
         case quiz:
@@ -54,6 +56,8 @@ enum AppPage {
     switch (this) {
       case home:
         return const HomePage();
+      case trip:
+        return const TripPage();
       case trip:
         return const TripPage();
       case account:
@@ -85,6 +89,7 @@ class _MainAppState extends State<MainApp> {
 
   void changePage(int value) {
     setState(() {
+      page = AppPage.values[value];
       page = AppPage.values[value];
     });
   }
