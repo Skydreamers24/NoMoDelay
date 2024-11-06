@@ -18,8 +18,12 @@ enum AppPage {
     switch (this) {
       case home:
         return "Home";
+      case trip:
+        return "Trip";
       case account:
         return "Account";
+      case trip:
+        return "Trip";
       default:
         return "";
     }
