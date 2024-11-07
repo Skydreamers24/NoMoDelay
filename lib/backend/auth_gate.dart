@@ -38,14 +38,14 @@ class _AuthGateState extends State<AuthGate> {
               child: SizedBox(
                   width: 100,
                   height: 100,
-                  child: SvgPicture.asset("assets/logo_square.svg")),
+                  child: Image.asset("assets/cathay_logo.png")),
             ),
             sideBuilder: (context, constraints) => Padding(
               padding: spacious,
               child: SizedBox(
                   width: 100,
                   height: 100,
-                  child: SvgPicture.asset("assets/logo_square.svg")),
+                  child: Image.asset("assets/cathay_logo.png")),
             ),
             showPasswordVisibilityToggle: true,
           );

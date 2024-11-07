@@ -24,6 +24,7 @@ class _TripPageState extends State<TripPage> {
     final account = Account.of(context);
     final trip = account.trip;
     return PageContent.withTitleWidget(
+      safeAreaTop: false,
       titlePadding: zero,
       titleWidget: SizedBox(
         height: 200,

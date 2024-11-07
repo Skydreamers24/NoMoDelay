@@ -23,7 +23,7 @@ class JourneyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContentCard(
       onTap: onTap,
-      height: isCurrent ? 183 : 150,
+      height: isCurrent ? 190 : 150,
       child: Padding(
         padding: comfortableCardInset,
         child: Row(
