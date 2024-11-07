@@ -85,6 +85,8 @@ flutter:
     - assets/card_face.svg
     - assets/whale_avatar.png
     - assets/app_icons/web_192.png
+    - assets/cathay_logo.png
+    - assets/cathay_logo2.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

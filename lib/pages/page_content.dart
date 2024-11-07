@@ -67,8 +67,6 @@ class PageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final filteredChildren =
-        children.where((widget) => !widget.isNothing).toList();
     final column = Column(
       mainAxisAlignment: verticalAlignment,
       crossAxisAlignment: horizontalAlignment,
@@ -94,7 +92,7 @@ class PageContent extends StatelessWidget {
                     padding: titlePadding,
                   )
                 : nothing,
-        for (var child in filteredChildren)
+        for (var child in children)
           Padding(
             padding: childrenPadding,
             child: child,

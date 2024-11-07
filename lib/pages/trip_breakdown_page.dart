@@ -30,7 +30,7 @@ class TripBreakdownPage extends StatelessWidget {
                   toDatabaseSync(account.copyWith(trip: trip));
                   Navigator.pop(context);
                 },
-                child: Text("Confirm")),
+                child: const Text("Confirm")),
           )
         ],
       ),
@@ -54,7 +54,7 @@ class TripBreakdownPage extends StatelessWidget {
                                   .copyWith(color: theme.colorScheme.onPrimary),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           Expanded(
@@ -75,17 +75,23 @@ class TripBreakdownPage extends StatelessWidget {
                                 "${journey.from.time.day}/${journey.from.time.month} ${journey.from.time.hour.toString().padLeft(2, "0")}:${journey.from.time.minute.toString().padLeft(2, "0")}—${journey.to.time.day}/${journey.to.time.month} ${journey.to.time.hour.toString().padLeft(2, "0")}:${journey.to.time.minute.toString().padLeft(2, "0")}",
                                 style: subheading(context),
                               ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              const FlightRemindersCard(),
+                              const SizedBox(
+                                height: 20,
+                              )
                             ],
                           ))
                         ],
                       ),
-                      const SizedBox(height: 8,),
-                      const FlightRemindersCard(),
                     ],
                   );
                 default:
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +104,7 @@ class TripBreakdownPage extends StatelessWidget {
                                   .copyWith(color: theme.colorScheme.onPrimary),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           Expanded(
@@ -119,10 +125,18 @@ class TripBreakdownPage extends StatelessWidget {
                                 "${journey.from.time.day}/${journey.from.time.month} ${journey.from.time.hour.toString().padLeft(2, "0")}:${journey.from.time.minute.toString().padLeft(2, "0")}—${journey.to.time.day}/${journey.to.time.month} ${journey.to.time.hour.toString().padLeft(2, "0")}:${journey.to.time.minute.toString().padLeft(2, "0")}",
                                 style: subheading(context),
                               ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              FilledButton(
+                                  onPressed: () {}, child: const Text("Book")),
                             ],
-                          ))
+                          )),
                         ],
                       ),
+                      const SizedBox(
+                        height: 20,
+                      )
                     ],
                   );
               }
@@ -158,9 +172,9 @@ class _FlightRemindersCardState extends State<FlightRemindersCard> {
         shrinkWrap: true,
         children: [
           ListTile(
-            title: Text("Visa"),
+            title: const Text("Visa"),
             trailing: FilledButton.icon(
-                icon: visa ? Icon(Icons.check) : null,
+                icon: visa ? const Icon(Icons.check) : null,
                 onPressed: visa
                     ? null
                     : () {
@@ -168,12 +182,12 @@ class _FlightRemindersCardState extends State<FlightRemindersCard> {
                           visa = true;
                         });
                       },
-                label: Text("Apply")),
+                label: const Text("Apply")),
           ),
           ListTile(
-            title: Text("Plane ticket"),
+            title: const Text("Plane ticket"),
             trailing: FilledButton.icon(
-                icon: planeTicket ? Icon(Icons.check) : null,
+                icon: planeTicket ? const Icon(Icons.check) : null,
                 onPressed: planeTicket
                     ? null
                     : () {
@@ -181,12 +195,12 @@ class _FlightRemindersCardState extends State<FlightRemindersCard> {
                           planeTicket = true;
                         });
                       },
-                label: Text("Book")),
+                label: const Text("Book")),
           ),
           ListTile(
-            title: Text("Hotel"),
+            title: const Text("Hotel"),
             trailing: FilledButton.icon(
-                icon: hotel ? Icon(Icons.check) : null,
+                icon: hotel ? const Icon(Icons.check) : null,
                 onPressed: hotel
                     ? null
                     : () {
@@ -194,7 +208,7 @@ class _FlightRemindersCardState extends State<FlightRemindersCard> {
                           hotel = true;
                         });
                       },
-                label: Text("Book")),
+                label: const Text("Book")),
           )
         ],
       ),

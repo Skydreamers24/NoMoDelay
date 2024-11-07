@@ -1,17 +1,23 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:skywalker/backend/account.dart';
-import 'package:skywalker/misc/checkpoint.dart';
-import 'package:skywalker/misc/journey.dart';
-import 'package:skywalker/misc/transport.dart';
-import 'package:skywalker/misc/trip.dart';
+import 'package:skywalker/misc/trip_library.dart';
 import 'package:skywalker/misc/values.dart';
 import 'package:skywalker/pages/page_content.dart';
 import 'package:skywalker/widgets/cards/journey_card.dart';
 import 'package:skywalker/widgets/cards/trip_summary_card.dart';
 import 'package:skywalker/widgets/other/hero_banner.dart';
 
-class TripPage extends StatelessWidget {
+class TripPage extends StatefulWidget {
   const TripPage({super.key});
+
+  @override
+  State<TripPage> createState() => _TripPageState();
+}
+
+class _TripPageState extends State<TripPage> {
+  int currentJourney = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,99 +29,45 @@ class TripPage extends StatelessWidget {
         height: 200,
         child: HeroBanner(
           image: trip.image,
-          title: "Trip",
-          subtitle: "Next trip: ${trip.destination}",
+          title: "Next trip: ${trip.destination}",
+          titleStyle: pageTitle(context),
         ),
       ),
       children: [
-        SizedBox(),
-        for (final (index, trip) in trips.indexed)
-          TripSummaryCard(
-            number: index + 1,
-            trip: trip,
-          ),
-        for (final journey in trip.journeys)
+        const SizedBox(),
+        for (final (index, journey) in trip.journeys.indexed)
           JourneyCard(
+            isCurrent: index == currentJourney,
+            isLast: index == trip.journeys.length - 1,
             journey: journey,
-          )
+          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: comfortable,
+              child: IconButton.filledTonal(
+                  onPressed: () {
+                    setState(() {
+                      currentJourney = max(0, currentJourney - 1);
+                    });
+                  },
+                  icon: const Icon(Icons.arrow_left)),
+            ),
+            Padding(
+              padding: comfortable,
+              child: IconButton.filledTonal(
+                  onPressed: () {
+                    setState(() {
+                      currentJourney =
+                          min(trip.journeys.length - 1, currentJourney + 1);
+                    });
+                  },
+                  icon: const Icon(Icons.arrow_right)),
+            )
+          ],
+        )
       ],
     );
   }
 }
-
-final List<Trip> trips = [
-  Trip(
-      image:
-          "https://a.cdn-hotels.com/gdcs/production85/d1715/475fcc95-21d7-44a7-9d42-4fd6219d9f55.jpg",
-      journeys: [
-        Journey(
-            transport: Transport.train,
-            price: 200,
-            from: Checkpoint(
-              time: DateTime.parse("2024-05-26 16:00"),
-              location: "Guangzhou",
-            ),
-            to: Checkpoint(
-              time: DateTime.parse("2024-05-26 17:15"),
-              location: "Hong Kong",
-            )),
-        Journey(
-            transport: Transport.metro,
-            price: 105,
-            from: Checkpoint(
-                time: DateTime.parse("2024-05-26 17:45"),
-                location: "Hong Kong West Kowloon"),
-            to: Checkpoint(
-                time: DateTime.parse("2024-05-26 18:30"),
-                location: "Hong Kong International Airport")),
-        Journey(
-            transport: Transport.flight,
-            price: 6500,
-            code: "CX255",
-            from: Checkpoint(
-              time: DateTime.parse("2024-05-26 23:15"),
-              location: "Hong Kong",
-            ),
-            to: Checkpoint(
-              time: DateTime.parse("2024-05-27 12:10"),
-              location: "London",
-            ))
-      ]),
-  Trip(
-      image:
-          "https://d36tnp772eyphs.cloudfront.net/blogs/1/2019/08/Macau-city-skyline-at-night.jpg",
-      journeys: [
-        Journey(
-            transport: Transport.flight,
-            price: 9128,
-            code: "CX260",
-            from: Checkpoint(
-              time: DateTime.parse("2024-11-07 11:40"),
-              location: "Paris",
-            ),
-            to: Checkpoint(
-              time: DateTime.parse("2024-11-08 06:55"),
-              location: "Hong Kong",
-            )),
-        Journey(
-            transport: Transport.airPlusSea,
-            price: 400,
-            from: Checkpoint(
-                time: DateTime.parse("2024-11-08 08:00"),
-                location: "Hong Kong"),
-            to: Checkpoint(
-                time: DateTime.parse("2024-11-08 09:30"),
-                location: "Macao")),
-        Journey(
-            transport: Transport.taxi,
-            price: 100,
-            from: Checkpoint(
-              time: DateTime.parse("2024-11-08 09:45"),
-              location: "Macao Maritime Ferry Terminal",
-            ),
-            to: Checkpoint(
-              time: DateTime.parse("2024-11-08 10:10"),
-              location: "Grand Lisboa",
-            ))
-      ]),
-];

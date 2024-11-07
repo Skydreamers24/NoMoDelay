@@ -6,7 +6,6 @@ import 'package:skywalker/misc/show_popup.dart';
 import 'package:skywalker/misc/values.dart';
 import 'package:skywalker/pages/edit_profile_page.dart';
 import 'package:skywalker/widgets/other/image_frame.dart';
-import 'package:skywalker/widgets/other/profile_image.dart';
 
 class UserCardFront extends StatelessWidget {
   const UserCardFront({super.key});
@@ -18,8 +17,11 @@ class UserCardFront extends StatelessWidget {
         ImageFrame(
           aspectRatio: 1.588,
           elevation: 10,
-          backgroundColor: Colors.blueGrey[600],
-          image: SvgPicture.asset("assets/card_face.svg"),
+          backgroundColor: Colors.grey[100],
+          image: Padding(
+            padding: const EdgeInsets.all(300),
+            child: Image.asset("assets/cathay_logo.png"),
+          ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
@@ -27,7 +29,7 @@ class UserCardFront extends StatelessWidget {
             padding: comfortableCardInset,
             child: Text(
               "Tap to reveal profile",
-              style: subheading(context).copyWith(color: Colors.grey[100]),
+              style: subheading(context).copyWith(color: Colors.grey[700]),
             ),
           ),
         ),
@@ -35,7 +37,7 @@ class UserCardFront extends StatelessWidget {
           alignment: Alignment.topRight,
           child: Padding(
             padding: comfortableCardInset,
-            child: Icon(Icons.person, size: 35, color: Colors.grey[100]),
+            child: Icon(Icons.person, size: 35, color: Colors.grey[700]),
           ),
         )
       ],
@@ -139,7 +141,7 @@ class _UserCardBackState extends State<UserCardBack> {
               child: SizedBox(
                   width: 20,
                   height: 20,
-                  child: SvgPicture.asset("assets/logo_square.svg")),
+                  child: Image.asset("assets/cathay_logo.png")),
             ),
           )
         ],

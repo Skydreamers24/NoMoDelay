@@ -31,16 +31,16 @@ class ContactCardWide extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: Tooltip(
-                  message: "WhatsApp",
+                  message: "WeChat",
                   child: IconButton.filled(
                     color: theme.colorScheme.onPrimary,
                     onPressed: () async {
                       if (!await launchUrl(Uri.parse(Uri.encodeFull(
-                          "https://whatsapp.com")))) {
-                        throw Exception("Could not launch Whatsapp URL");
+                          "https://wechat.com")))) {
+                        throw Exception("Could not launch WeChat URL");
                       }
                     },
-                    icon: const Icon(FontAwesomeIcons.whatsapp),
+                    icon: const Icon(FontAwesomeIcons.comment),
                   ),
                 ),
               ),

@@ -5,7 +5,8 @@ enum Transport {
   airPlusSea,
   taxi,
   metro,
-  train;
+  train,
+  coach;
 
   @override
   String toString() {
@@ -15,6 +16,7 @@ enum Transport {
       Transport.taxi: "Taxi",
       Transport.train: "Train",
       Transport.metro: "Metro",
+      Transport.coach: "Coach"
     } [this] ?? "Flight";
   }
 
@@ -25,6 +27,7 @@ enum Transport {
       "Taxi": Transport.taxi,
       "Train": Transport.train,
       "Metro": Transport.metro,
+      "Coach": Transport.coach
     } [s] ?? Transport.flight;
   }
 
@@ -34,7 +37,8 @@ enum Transport {
       Transport.airPlusSea: Icons.directions_ferry,
       Transport.taxi: Icons.local_taxi,
       Transport.train: Icons.train,
-      Transport.metro: Icons.directions_transit
+      Transport.metro: Icons.directions_transit,
+      Transport.coach: Icons.directions_bus
     } [this] ?? Icons.flight;
   }
 }

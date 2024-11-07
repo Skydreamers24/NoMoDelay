@@ -9,9 +9,9 @@ import 'package:skywalker/widgets/other/rounded_rectangle.dart';
 class TripSummaryCard extends StatelessWidget {
   final int number;
   final Trip trip;
-  final bool showSelectButton;
+  final bool showDetailsButton;
   const TripSummaryCard(
-      {super.key, this.trip = const Trip(), this.showSelectButton = false, this.number=1});
+      {super.key, this.trip = const Trip(), this.showDetailsButton = false, this.number=1});
 
   @override
   Widget build(BuildContext context) {

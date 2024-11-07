@@ -2,22 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:skywalker/misc/theme.dart';
 import 'package:skywalker/misc/values.dart';
 import 'package:skywalker/pages/account_page.dart';
-import 'package:skywalker/pages/home_page.dart';
 import 'package:skywalker/pages/trip_page.dart';
 import 'package:skywalker/widgets/other/adaptive.dart';
 import 'package:skywalker/pages/quiz_page.dart';
 
 enum AppPage {
-  home,
+  quiz,
   trip,
-  account,
-  quiz;
+  account;
 
   @override
   String toString() {
     switch (this) {
-      case home:
-        return "Home";
       case trip:
         return "Trip";
       case account:
@@ -32,10 +28,6 @@ enum AppPage {
   Icon icon(bool isActive, ThemeData theme) {
     IconData iconData = () {
       switch (this) {
-        case home:
-          return isActive ? Icons.home : Icons.home_outlined;
-        case trip:
-          return isActive ? Icons.luggage : Icons.luggage_outlined;
         case trip:
           return isActive ? Icons.luggage : Icons.luggage_outlined;
         case account:
@@ -54,10 +46,6 @@ enum AppPage {
 
   Widget content() {
     switch (this) {
-      case home:
-        return const HomePage();
-      case trip:
-        return const TripPage();
       case trip:
         return const TripPage();
       case account:
@@ -75,7 +63,7 @@ class MainApp extends StatefulWidget {
 
   int get pageIndex => page.index;
 
-  MainApp({super.key, this.page = AppPage.home});
+  MainApp({super.key, this.page = AppPage.quiz});
 
   final List<Widget> pageContents =
       AppPage.values.map((page) => page.content()).toList();
@@ -85,7 +73,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  AppPage page = AppPage.home;
+  AppPage page = AppPage.quiz;
 
   void changePage(int value) {
     setState(() {

@@ -24,7 +24,7 @@ class ImageFrame extends StatelessWidget {
         shape: shape,
         color: backgroundColor,
         child: FittedBox(
-          fit: BoxFit.cover,
+          fit: BoxFit.fitHeight,
           child: image,
         ),
       ),

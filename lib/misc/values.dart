@@ -111,17 +111,9 @@ const localizationsDelegates = [
   GlobalCupertinoLocalizations.delegate,
 ];
 const debugShowCheckedModeBanner = false;
-const title = "GUTolution";
+const title = "Skywalker";
 
-const nothingKey = Key("_nothing");
-const nothing = SizedBox.shrink(key: nothingKey,);
-
-extension IsNothing on Widget {
-  // Does not work
-  bool get isNothing {
-    return key == nothingKey;
-  }
-}
+const nothing = SizedBox.shrink();
 
 extension IsBrightness on ThemeData {
   bool get isLightMode => brightness == Brightness.light;

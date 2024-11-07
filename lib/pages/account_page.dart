@@ -32,6 +32,7 @@ class _AccountPageState extends State<AccountPage> {
     var account = Account.of(context);
     return PageContent(
       title: "Account",
+      trailing: IconButton.outlined(onPressed: () {}, icon: const Icon(Icons.language)),
       children: <Widget>[
             Container(
               constraints: const BoxConstraints(maxHeight: 250),

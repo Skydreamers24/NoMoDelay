@@ -5,6 +5,7 @@ import 'package:skywalker/misc/values.dart';
 class HeroBanner extends StatelessWidget {
   final String? image;
   final String title;
+  final TextStyle? titleStyle;
   final String? subtitle;
   final EdgeInsets padding;
   final Widget? child;
@@ -19,6 +20,7 @@ class HeroBanner extends StatelessWidget {
       this.fadeTo = Colors.black,
       this.padding = comfortable,
       this.childMaxHeight = 50,
+      this.titleStyle,
       this.child});
 
   @override
@@ -62,7 +64,7 @@ class HeroBanner extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: TextStyle(
+                          style: (titleStyle ?? const TextStyle()).copyWith(
                               color: foreground(fadeTo),
                               fontWeight: FontWeight.bold,
                               overflow: TextOverflow.ellipsis),

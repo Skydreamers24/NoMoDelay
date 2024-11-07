@@ -54,7 +54,7 @@ class Account extends StatelessWidget {
             phoneNo: (data["phoneNo"] ?? "") as String,
             region: (data["region"] ?? "") as String,
             trip: Trip.fromMap(
-                data["trip"] ?? const { "image": "", "journeys": []}),
+                data["trip"] ?? const {"image": "", "journeys": []}),
             child: child,
           );
 
@@ -113,6 +113,7 @@ class AccountData extends InheritedWidget {
     Widget? child,
     String? region,
     Trip? trip,
+    Trip? plan,
   }) {
     return AccountData(
       uid: uid ?? this.uid,
@@ -138,7 +139,7 @@ class AccountData extends InheritedWidget {
       "email": email,
       "phoneNo": phoneNo,
       "region": region,
-      "trip": trip.toMap()
+      "trip": trip.toMap(),
     };
   }
 

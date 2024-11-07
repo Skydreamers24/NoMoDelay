@@ -18,7 +18,7 @@ class FilteredListView<T> extends StatefulWidget {
   final List<SortOption<T>> sortOptions;
   final List<T> data;
   final ScrollController? scrollController;
-  final Widget Function(T)? builder;
+  final Widget Function(int, T)? builder;
 
   const FilteredListView(
       {super.key,
@@ -122,8 +122,8 @@ class _FilteredListViewState<T> extends State<FilteredListView<T>> {
                       .toList();
                 }
                 return [
-                  for (final dataEntry in matchingEntries)
-                    widget.builder!(dataEntry)
+                  for (final (index, dataEntry) in matchingEntries.indexed)
+                    widget.builder!(index, dataEntry)
                 ];
               },
             ),
@@ -180,7 +180,7 @@ class _FilteredListViewState<T> extends State<FilteredListView<T>> {
             controller: widget.scrollController,
             shrinkWrap: true,
             itemBuilder: (context, index) => widget.builder != null
-                ? widget.builder!(selectedData[index])
+                ? widget.builder!(index, selectedData[index])
                 : nothing,
             separatorBuilder: (context, index) => const CustomDivider(),
             itemCount: selectedData.length),
